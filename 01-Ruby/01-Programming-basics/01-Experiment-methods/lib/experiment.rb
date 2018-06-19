@@ -29,14 +29,21 @@ end
 def random_subset(an_array, sample_size)
   # TODO: return a random subset of an_array with size sample_size
   # example: random_subset(('a'..'z').to_a, 4) => ["u", "q", "l", "t"]
+  subset = []
+  sample_size.times do
+    subset.push(an_array[rand(an_array.size)])    
+  end
+  return subset
 end
 
 def randomize(an_array)
   # TODO: return a randomized copy of an_array
   # example: randomize([1, 2, 3, 4]) => [2, 1, 4, 3]
+  return an_array.shuffle
 end
 
 def ascending_order(an_array)
   # TODO: return a copy of an_array with elements in ascending order
   # example: ascending_order([7, 3, 1, 6, 9]) => [1, 3, 6, 7, 9]
+  return an_array.sort{|x,y| x <=> y}
 end
