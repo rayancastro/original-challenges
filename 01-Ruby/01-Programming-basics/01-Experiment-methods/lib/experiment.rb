@@ -1,7 +1,3 @@
-# Warning:
-# - One line of code for each method
-# - Just look in the doc for the right method of the String, Integer, and Array classes!
-
 def get_rid_of_surrounding_whitespaces(a_string)
   return a_string.strip
 end
