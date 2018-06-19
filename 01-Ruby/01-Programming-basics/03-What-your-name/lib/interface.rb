@@ -14,4 +14,4 @@ middle_name = gets.chomp.to_s
 puts 'What\'s your last name?'
 last_name = gets.chomp.to_s
 
-puts(compute_name(first_name,middle_name,last_name))
+puts(compute_name(first_name, middle_name, last_name))
