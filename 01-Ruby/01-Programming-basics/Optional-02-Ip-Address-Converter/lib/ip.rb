@@ -17,12 +17,10 @@ def binary_to_num(bin)
   bin_array = bin.to_s.reverse.each_char.map(&:to_i)
   decimal = 0
   bin_array.each_index do |index|
-    decimal += bin_array[index]*(2**index)
+    decimal += bin_array[index] * (2**index)
   end
   return decimal
 end
-
-
 
 def ip_to_num(ip_address)
   str_arr = ip_address.to_s.split(".")
@@ -36,12 +34,12 @@ end
 
 def num_to_ip(number)
   binary_string = binary_conversor(number)
-  fill_n_bit(binary_string,32)
+  fill_n_bit(binary_string, 32)
   bin_array = []
   (0...binary_string.length).step(8) do |x|
-    bin_array.push(binary_string[x,8])
+    bin_array.push(binary_string[x, 8])
   end
-  bin_array.map!{ |element| binary_to_num(element) }
+  bin_array.map! { |element| binary_to_num(element) }
   ip_string = bin_array.join(".")
   return ip_string
 end
