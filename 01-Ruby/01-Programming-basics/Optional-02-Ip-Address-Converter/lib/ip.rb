@@ -44,5 +44,3 @@ def num_to_ip(number)
   return ip_string
 end
 
-p num_to_ip(ip_to_num("37.160.113.170"))
-
