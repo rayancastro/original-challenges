@@ -10,4 +10,8 @@ end
 
 def valid_card?(card)
   # TODO: Implement the validator. Return true if the card is valid, false otherwise.
+  card.delete!(' ')
+  card_array = card.to_s.reverse.each_char.map(&:to_i)
+
+
 end
