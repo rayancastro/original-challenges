@@ -1,9 +1,11 @@
 def visa?(card)
   # TODO: A visa card starts with a 4
+  return card.strip[0] == "4"
 end
 
 def mastercard?(card)
   # TODO: A mastercard card starts with a 5
+  return card.strip[0] == "5"
 end
 
 def valid_card?(card)
