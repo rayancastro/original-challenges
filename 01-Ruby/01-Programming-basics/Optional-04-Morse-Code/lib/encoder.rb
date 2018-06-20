@@ -19,4 +19,5 @@ def encode_word(word)
   # word.each_char {|char| morse_word += $morse[char.to_sym]}
   return word
 end
-p encode("HEY JUDE")
+
+p encode("Testing this stuff")
