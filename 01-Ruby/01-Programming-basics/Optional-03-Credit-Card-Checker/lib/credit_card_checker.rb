@@ -20,5 +20,3 @@ def valid_card?(card)
   card_array[0, card_array.size - 1].each { |element| sum_array += element }
   return (sum_array % 10).zero?
 end
-
-p valid_card?("4242 4242 4242 4242")
