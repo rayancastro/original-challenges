@@ -9,10 +9,12 @@
 
 def are_identical_symbols_same_objects?
   # TODO: Answer the question by making this method to return true or false
+  true
 end
 
 def are_identical_strings_same_objects?
   # TODO: Answer the question by making this method to return true or false
+  false
 end
 
 
@@ -21,17 +23,21 @@ end
 # - http://www.ruby-doc.org/core-2.4.0/Symbol.html
 
 def convert_string_to_symbol(a_string)
-  # TODO: return the symbol version of the parameter `a_string` passed to this method
+  # TODO: return the symbol version of th"foo".object_ide parameter `a_string` passed to this method
+  a_string.to_sym
 end
 
 def convert_symbol_to_string(a_symbol)
   # TODO: return the string version of the parameter `a_symbol` passed to this method
+  a_symbol.to_s
 end
 
 def me
   # TODO: return a Hash representing yourself, with keys such as age and name
+  { name: "Rayan", age: 27 }
 end
 
 def fruits
   # TODO: return an array of fruits
+  ["banana", "grape", "apple"]
 end
