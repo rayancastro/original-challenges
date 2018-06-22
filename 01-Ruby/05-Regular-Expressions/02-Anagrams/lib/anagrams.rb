@@ -1,16 +1,23 @@
 ALPHABET = ("a".."z").to_a.join
 
+def char_frequencies(string)
+  freq = {}
+  string.chars.each do |char|
+    (freq.key?(char.downcase) ? freq[char.downcase] += 1 : freq[char.downcase] = 1) if ALPHABET.include?(char.downcase)
+  end
+  return freq
+end
+
 def anagrams?(a_string, another_string)
-  # TODO: implement the obvious method to test if two words are anagrams
   first_anagram = a_string.downcase.gsub(/[^#{ALPHABET}]/) { "" }.chars.sort.join
   second_anagram = another_string.downcase.gsub(/[^#{ALPHABET}]/) { "" }.chars.sort.join
   first_anagram == second_anagram
 end
 
 def anagrams_on_steroids?(a_string, another_string)
-  anagram_hash = {}
-  anagram_hash[a_string.downcase.gsub(/[^#{ALPHABET}]/) { "" }.chars.sort.join] = 1
-  anagram_hash.key?(another_string.downcase.gsub(/[^#{ALPHABET}]/) { "" }.chars.sort.join)
+  frequencies_one = char_frequencies(a_string)
+  frequencies_two = char_frequencies(another_string)
+  frequencies_one == frequencies_two
 end
 
 # def test_anagrams(argument_one, argument_two, iterations)
