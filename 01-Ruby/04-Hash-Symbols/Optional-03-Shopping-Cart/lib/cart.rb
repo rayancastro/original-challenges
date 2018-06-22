@@ -18,9 +18,7 @@ def cart_total_price(cart, store_items)
   sum = 0
   # For each word, check for hash corresponding value. adds to sum
   cart.each do |item|
-    if store_items.key?(item.to_sym)
-      sum += store_items[item.to_sym]
-    end
+    sum += store_items[item.to_sym] if store_items.key?(item.to_sym)
   end
   return sum
 end
