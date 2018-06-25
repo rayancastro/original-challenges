@@ -19,22 +19,25 @@ STRINGS = {
   }
 }
 
+def path_tester(path, lang)
+  if path.size == 2
+    return STRINGS[path[0]][path[1]][(STRINGS[path[0]][path[1]].key?(lang.to_sym) ? lang.to_sym : :en)]
+  elsif path.size == 3
+    if STRINGS[path[0]][path[1]][path[2]].key?(lang.to_sym)
+      return STRINGS[path[0]][path[1]][path[2]][lang.to_sym]
+    else return STRINGS[path[0]][path[1]][path[2]][:en]
+    end
+  end
+end
+
 def translation(a_string, a_language = "en")
   # TODO: your code goes here
   path = a_string.split(".").map { |word| word.to_sym }
   begin
-    if path.size == 2
-      if STRINGS[path[0]][path[1]].key?(a_language.to_sym)
-        return STRINGS[path[0]][path[1]][a_language.to_sym]
-      else return STRINGS[path[0]][path[1]][:en]
-      end
-    elsif path.size == 3
-      if STRINGS[path[0]][path[1]][path[2]].key?(a_language.to_sym)
-        return STRINGS[path[0]][path[1]][path[2]][a_language.to_sym]
-      else return STRINGS[path[0]][path[1]][path[2]][:en]
-      end
-    end
-  rescue
+    return path_tester(path, a_language)
+  rescue NameError, ArgumentError
+    return ""
+  else
     return ""
   end
 end
