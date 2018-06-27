@@ -10,6 +10,10 @@ class UberHash
       return instance_variable_get(getter)
     end
   end
+
+  def respond_to_missing?(method, include_private = false)
+    super
+  end
   # first argument is the method called to a symbol
   # Override the method_missing method for my own
   # When someone try to calls a non-existing method
