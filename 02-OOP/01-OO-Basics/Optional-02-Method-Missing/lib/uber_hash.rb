@@ -1,7 +1,7 @@
 class UberHash
   # Initialize uberhash class
-
   def method_missing(method, value = nil)
+    super if method.nil?
     if method.to_s[-1] == "="
       assign = "@" + method.to_s[0..-2]
       instance_variable_set(assign, value)
