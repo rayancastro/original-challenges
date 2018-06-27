@@ -7,11 +7,11 @@ def display(vending_machine)
 end
 
 # We instantiate an **empty** vending machine selling 2.5 euros snacks.
-vending_machine = VendingMachine.new(250, 0)
+vending_machine = VendingMachine.new(250, 0, "lewagon")
 puts "Vending machine ready!"
 puts display(vending_machine)
 
 # A technician comes and refill the vending machine with 20 snacks.
 puts "Technician filling machine with 20 snacks"
-vending_machine.snacks = vending_machine.snacks + 20
+vending_machine.refill(20, "lewagon")
 puts display(vending_machine)

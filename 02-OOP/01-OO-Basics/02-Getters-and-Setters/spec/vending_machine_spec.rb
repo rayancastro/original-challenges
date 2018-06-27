@@ -61,7 +61,7 @@ describe "VendingMachine" do
   context "Refilling Scenario" do
     describe "#snacks=" do
       it "should let a technician refill a machine" do
-        vending_machine.snacks = vending_machine.snacks + 10
+        vending_machine.refill(10)
         expect(vending_machine.snacks).to eq(20)
       end
     end
