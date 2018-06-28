@@ -12,7 +12,7 @@ class Player
     @last_position = [{x: @x, y: @y}]
     @score = 0
     @size = 1
-    @speed_factor = 5 + @size*0.05
+    @speed_factor = 5 + @size*0.5
     @isdead = false
   end
 
@@ -51,7 +51,7 @@ class Player
 
   def collect_stars(stars)
     stars.reject! do |star|
-      if Gosu.distance(@x, @y, star.x, star.y) < 15
+      if Gosu.distance(@x, @y, star.x, star.y) < 10
         @score += 10
         @beep.play
         @size += 1
@@ -69,7 +69,15 @@ class Player
       @vel_y = 0
     end
 
-
+    if @last_position.size > 2
+      @last_position[1..-1].each do |pos_hash|
+        if Gosu.distance(@x, @y, pos_hash[:x], pos_hash[:y]) <= 5
+          @isdead = true
+          @vel_x = 0
+          @vel_y = 0
+        end
+      end
+    end
 
   end
 
@@ -77,10 +85,11 @@ class Player
     unless @isdead
       if Gosu.distance(@x, @y, @last_position[0][:x], @last_position[0][:y]) > 9
         @last_position.unshift({x: @x, y: @y})
-        @last_position = @last_position[0..200]
+        @last_position = @last_position[0..@size+1]
       end
       @x += @vel_x
       @y += @vel_y
+      @position = {x: @x, y: @y}
     end
   end
 
