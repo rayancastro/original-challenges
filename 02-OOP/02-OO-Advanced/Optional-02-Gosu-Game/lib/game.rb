@@ -5,6 +5,7 @@ require_relative 'item.rb'
 class GameWindow < Gosu::Window
   def initialize
     @player = Player.new
+    @player2 = Player.new("purple")
 
     super 640, 480, :fullscreen => false
     self.caption = "Rayan's Snake Game"
@@ -12,8 +13,13 @@ class GameWindow < Gosu::Window
 
 
     @player.warp(320, 240)
+
+    @player2.warp(100,100)
+
     @stars = Array.new
     @font = Gosu::Font.new(20)
+
+    @player_array = [@player, @player2]
   end
 
   def update
@@ -35,20 +41,61 @@ class GameWindow < Gosu::Window
     @player.move
     @player.collect_stars(@stars)
 
+    @player2.die?
+
+    if Gosu.button_down? Gosu::KB_A
+      @player2.turn_left
+    end
+    if Gosu.button_down? Gosu::KB_D
+      @player2.turn_right
+    end
+    if Gosu.button_down? Gosu::KB_W
+      @player2.turn_up
+    end
+    if Gosu.button_down? Gosu::KB_S
+      @player2.turn_down
+    end
+
+    @player2.move
+    @player2.collect_stars(@stars)
+
+    player_collision(@player, @player2)
+
     if rand(100) < 4 and @stars.size < 100
       @stars.push(Star.new)
+    end
+  end
+
+  def player_collision(player, player2)
+    player.last_position.each do |pos_hash|
+      if Gosu.distance(player2.x, player2.y, pos_hash[:x], pos_hash[:y]) <= 9
+        player2.die
+        player2.stop
+      end
+    end
+
+    player2.last_position.each do |pos_hash|
+      if Gosu.distance(player.x, player.y, pos_hash[:x], pos_hash[:y]) <= 9
+        player.die
+        player.stop
+      end
     end
   end
 
   def draw
     @background_image.draw(0, 0, ZOrder::BACKGROUND)
     @player.draw
+    @player2.draw
     @stars.each { |star| star.draw }
-    @font.draw("Score: #{@player.score}", 10, 10, ZOrder::UI, 1.0, 1.0, Gosu::Color::YELLOW)
-    # @font.draw("X: #{@player.x} Y: #{@player.y}", 30, 30, ZOrder::UI, 1.0, 1.0, Gosu::Color::YELLOW)
+    @font.draw("Player 1: #{@player.score}", 10, 10, ZOrder::UI, 1.0, 1.0, Gosu::Color::GREEN)
+    @font.draw("Player 2: #{@player2.score}", 10, 30, ZOrder::UI, 1.0, 1.0, Gosu::Color::RED)
 
     if @player.isdead
-      @font.draw("YOU LOSE. Score: #{@player.score}", 320, 240, ZOrder::UI, 1.0, 1.0, Gosu::Color::BLACK)
+      @font.draw("PLAYER 1 LOSE. Score: #{@player.score}", 50, 120, ZOrder::UI, 1.0, 1.0, Gosu::Color::BLACK)
+    end
+
+    if @player2.isdead
+      @font.draw("PLAYER 2 LOSE. Score: #{@player2.score}", 50, 360, ZOrder::UI, 1.0, 1.0, Gosu::Color::BLACK)
     end
   end
 

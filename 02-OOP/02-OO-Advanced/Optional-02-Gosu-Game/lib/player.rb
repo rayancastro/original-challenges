@@ -3,10 +3,13 @@ require 'gosu'
 SIZE = 20
 
 class Player
-  attr_reader :x, :y, :isdead
-  def initialize
-    @head = Gosu::Image.new("./media/green_cube.png")
-    @body = Gosu::Image.new("./media/green_cube.png")
+  attr_reader :x, :y, :isdead, :last_position
+  def initialize(color = "green")
+    @head = Gosu::Image.new("./media/green_cube.png") if color == "green"
+    @body = Gosu::Image.new("./media/green_cube.png") if color == "green"
+    @head = Gosu::Image.new("./media/purple_cube.png") if color == "purple"
+    @body = Gosu::Image.new("./media/purple_cube.png") if color == "purple"
+
     @beep = Gosu::Sample.new("./media/beep.wav")
     @x = @y = @vel_x = @vel_y = @angle = 0.0
     @last_position = [{x: @x, y: @y}]
@@ -21,23 +24,31 @@ class Player
   end
 
   def turn_up
-    @angle = 0
-    set_speed
+    if @angle != 180
+      @angle = 0
+      set_speed
+    end
   end
 
   def turn_right
-    @angle = 90
-    set_speed
+    if @angle != 270
+      @angle = 90
+      set_speed
+    end
   end
 
   def turn_down
-    @angle = 180
-    set_speed
+    if @angle != 0
+      @angle = 180
+      set_speed
+    end
   end
 
   def turn_left
-    @angle = 270
-    set_speed
+    if @angle != 90
+      @angle = 270
+      set_speed
+    end
   end
 
   def set_speed
@@ -63,11 +74,11 @@ class Player
   end
 
   def die?
-    if (@x > 640) or (@x < 0) or (@y > 480) or (@y <0)
-      @isdead = true
-      @vel_x = 0
-      @vel_y = 0
-    end
+    # if (@x > 640) or (@x < 0) or (@y > 480) or (@y <0)
+    #   @isdead = true
+    #   @vel_x = 0
+    #   @vel_y = 0
+    # end
 
     if @last_position.size > 2
       @last_position[1..-1].each do |pos_hash|
@@ -78,7 +89,15 @@ class Player
         end
       end
     end
+  end
 
+  def die
+    @isdead = true
+  end
+
+  def stop
+    @vel_x = 0
+    @vel_y = 0
   end
 
   def move
@@ -89,6 +108,9 @@ class Player
       end
       @x += @vel_x
       @y += @vel_y
+      @x %= 640
+      @y %= 480
+
       @position = {x: @x, y: @y}
     end
   end

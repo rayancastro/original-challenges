@@ -9,10 +9,10 @@ class Star
 
   def initialize
     @image = Gosu::Image.new("./media/apple.png")
-    @color = Gosu::Color::BLACK.dup
-    @color.red = rand(256 - 40) + 40
-    @color.green = rand(256 - 40) + 40
-    @color.blue = rand(256 - 40) + 40
+    @color = Gosu::Color::RED.dup
+    # @color.red = rand(256 - 40) + 40
+    # @color.green = rand(256 - 40) + 40
+    # @color.blue = rand(256 - 40) + 40
     @x = rand * 640
     @y = rand * 480
   end
