@@ -10,7 +10,7 @@ class Apple
   def initialize
     @image = Gosu::Image.new("./media/apple.png")
     @color = Gosu::Color::RED.dup
-    # @color.red = rand(256 - 40) + 40
+    @color.red = 254
     # @color.green = rand(256 - 40) + 40
     # @color.blue = rand(256 - 40) + 40
     @x = rand * 640
@@ -20,6 +20,6 @@ class Apple
   def draw
     img = @image
     img.draw(@x - img.width / 2.0, @y - img.height / 2.0,
-        ZOrder::APPLES, 1, 1, @color, :add)
+        ZOrder::APPLES) #, 1, 1, @color, :add)
   end
 end

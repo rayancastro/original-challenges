@@ -20,7 +20,7 @@ class Player
   end
 
   def warp(x, y)
-    @x, @y = x, vel_y
+    @x, @y = x, y
   end
 
   def turn_up

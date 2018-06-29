@@ -9,7 +9,7 @@ class GameWindow < Gosu::Window
 
     super 640, 480, :fullscreen => false
     self.caption = "Rayan's Snake Game"
-    @background_image = Gosu::Image.new("./media/dirt.jpg", :tileable => true)
+    @background_image = Gosu::Image.new("./media/white-back.jpg", :tileable => true)
 
 
     @player.warp(416, 240)
@@ -78,7 +78,7 @@ class GameWindow < Gosu::Window
   end
 
   def draw
-    @background_image.draw(0, 0, ZOrder::BACKGROUND, 1, 1)
+    @background_image.draw(0, 0, ZOrder::BACKGROUND, 1, 1, Gosu::Color.argb(0xff_78AB46))
     @player.draw
     @player2.draw
     @apples.each { |apple| apple.draw }
