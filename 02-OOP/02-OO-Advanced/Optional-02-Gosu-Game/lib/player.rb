@@ -15,12 +15,12 @@ class Player
     @last_position = [{x: @x, y: @y}]
     @score = 0
     @size = 1
-    @speed_factor = 5 + @size*0.5
+    @speed_factor = 5 + @size*1.8
     @isdead = false
   end
 
   def warp(x, y)
-    @x, @y = x, y
+    @x, @y = x, vel_y
   end
 
   def turn_up
@@ -60,9 +60,9 @@ class Player
     @score
   end
 
-  def collect_stars(stars)
-    stars.reject! do |star|
-      if Gosu.distance(@x, @y, star.x, star.y) < 10
+  def collect_apples(apples)
+    apples.reject! do |apple|
+      if Gosu.distance(@x, @y, apple.x, apple.y) < 10
         @score += 10
         @beep.play
         @size += 1
@@ -93,9 +93,6 @@ class Player
 
   def die
     @isdead = true
-  end
-
-  def stop
     @vel_x = 0
     @vel_y = 0
   end

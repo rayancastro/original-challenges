@@ -1,10 +1,10 @@
 require 'gosu'
 
 module ZOrder
-  BACKGROUND, STARS, PLAYER, UI = *0..3
+  BACKGROUND, APPLES, PLAYER, UI = *0..3
 end
 
-class Star
+class Apple
   attr_reader :x, :y
 
   def initialize
@@ -20,6 +20,6 @@ class Star
   def draw
     img = @image
     img.draw(@x - img.width / 2.0, @y - img.height / 2.0,
-        ZOrder::STARS, 1, 1, @color, :add)
+        ZOrder::APPLES, 1, 1, @color, :add)
   end
 end

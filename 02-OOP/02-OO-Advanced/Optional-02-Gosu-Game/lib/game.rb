@@ -12,18 +12,19 @@ class GameWindow < Gosu::Window
     @background_image = Gosu::Image.new("./media/dirt.jpg", :tileable => true)
 
 
-    @player.warp(320, 240)
+    @player.warp(416, 240)
 
-    @player2.warp(100,100)
+    @player2.warp(213,240)
 
-    @stars = Array.new
+    @apples = Array.new
     @font = Gosu::Font.new(20)
 
     @player_array = [@player, @player2]
   end
 
   def update
-    @player.die?
+
+    player_collision(@player, @player2)
 
     if Gosu.button_down? Gosu::KB_LEFT or Gosu::button_down? Gosu::GP_LEFT
       @player.turn_left
@@ -38,11 +39,6 @@ class GameWindow < Gosu::Window
       @player.turn_down
     end
 
-    @player.move
-    @player.collect_stars(@stars)
-
-    @player2.die?
-
     if Gosu.button_down? Gosu::KB_A
       @player2.turn_left
     end
@@ -56,13 +52,14 @@ class GameWindow < Gosu::Window
       @player2.turn_down
     end
 
-    @player2.move
-    @player2.collect_stars(@stars)
+    @player_array.each do |player|
+      player.die?
+      player.move
+      player.collect_apples(@apples)
+    end
 
-    player_collision(@player, @player2)
-
-    if rand(100) < 4 and @stars.size < 100
-      @stars.push(Star.new)
+    if rand(100) < 4 and @apples.size < 100
+      @apples.push(Apple.new)
     end
   end
 
@@ -70,23 +67,21 @@ class GameWindow < Gosu::Window
     player.last_position.each do |pos_hash|
       if Gosu.distance(player2.x, player2.y, pos_hash[:x], pos_hash[:y]) <= 9
         player2.die
-        player2.stop
       end
     end
 
     player2.last_position.each do |pos_hash|
       if Gosu.distance(player.x, player.y, pos_hash[:x], pos_hash[:y]) <= 9
         player.die
-        player.stop
       end
     end
   end
 
   def draw
-    @background_image.draw(0, 0, ZOrder::BACKGROUND)
+    @background_image.draw(0, 0, ZOrder::BACKGROUND, 1, 1)
     @player.draw
     @player2.draw
-    @stars.each { |star| star.draw }
+    @apples.each { |apple| apple.draw }
     @font.draw("Player 1: #{@player.score}", 10, 10, ZOrder::UI, 1.0, 1.0, Gosu::Color::GREEN)
     @font.draw("Player 2: #{@player2.score}", 10, 30, ZOrder::UI, 1.0, 1.0, Gosu::Color::RED)
 
