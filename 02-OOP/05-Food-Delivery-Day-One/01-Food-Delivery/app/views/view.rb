@@ -15,6 +15,27 @@ class View
     gets.chomp.to_i
   end
 
+  def ask_meal_id
+    puts "What's the meal_id?"
+    gets.chomp.to_i
+  end
+
+  def ask_customer_id
+    puts "What's the customer_id?"
+    gets.chomp.to_i
+  end
+
+  def ask_employee_id
+    puts "What's the employee_id?"
+    gets.chomp.to_i
+  end
+
+  def display_orders(orders)
+    orders.each do |order|
+      puts "Meal: #{order.meal.name}, Employee: #{order.employee.username}, Customer: #{order.customer.name}, #{order.customer.address}"
+    end
+  end
+
   def display_all(meals)
     # puts "**** LIST OF MEALS ****"
     meals.each do |meal|
