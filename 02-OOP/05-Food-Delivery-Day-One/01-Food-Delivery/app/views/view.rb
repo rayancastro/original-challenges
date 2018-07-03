@@ -11,10 +11,10 @@ class View
   end
 
   def display_all(meals)
-    puts "**** LIST OF MEALS ****"
-    meals.each.with_index do |meal, index|
-      puts "#{index+1} - #{meal}"
+    # puts "**** LIST OF MEALS ****"
+    meals.each do |meal|
+      puts "#{meal.name}"
     end
-    puts "***** END OF LIST *****"
+    # puts "***** END OF LIST *****"
   end
 end
