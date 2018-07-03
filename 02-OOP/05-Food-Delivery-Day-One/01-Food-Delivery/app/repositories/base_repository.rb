@@ -39,6 +39,7 @@ class BaseRepository
       @next_id = @elements[-1].id + 1
     end
   end
+
   def update_csv
     fail StandardError, "Please create this method in the subclass"
   end

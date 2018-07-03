@@ -1,12 +1,17 @@
 class View
 
   def ask_name
-    puts "What's the name of the meal?"
+    puts "What's the name?"
+    gets.chomp.to_s
+  end
+
+  def ask_address
+    puts "What's the address?"
     gets.chomp.to_s
   end
 
   def ask_price
-    puts "What's the price of the meal?"
+    puts "What's the price?"
     gets.chomp.to_i
   end
 
