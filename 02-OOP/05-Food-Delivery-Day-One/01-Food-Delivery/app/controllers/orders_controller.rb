@@ -1,7 +1,6 @@
 require_relative '../repositories/order_repository.rb'
 
 class OrdersController
-
   attr_accessor :meal_repository, :employee_repository, :customer_repository, :order_repository
   def initialize(meal_repository, employee_repository, customer_repository, order_repository)
     @order_repository = order_repository
@@ -38,8 +37,8 @@ class OrdersController
 
   def mark_as_delivered(employee)
     id = @view.ask_order_id
-    order = @order_repository.undelivered_orders.find {|order| order.id == id}
-    order.deliver!
+    my_order = @order_repository.undelivered_orders.find { |order| order.id == id }
+    my_order.deliver!
     @order_repository.update_csv
   end
 end

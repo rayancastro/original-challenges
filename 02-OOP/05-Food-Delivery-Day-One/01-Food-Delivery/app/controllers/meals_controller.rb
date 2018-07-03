@@ -2,7 +2,6 @@ require_relative 'base_controller.rb'
 require_relative '../repositories/meal_repository.rb'
 
 class MealsController < BaseController
-
   def initialize(repository)
     super(repository)
   end

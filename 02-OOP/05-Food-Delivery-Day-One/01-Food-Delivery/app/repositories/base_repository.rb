@@ -1,5 +1,5 @@
 require 'csv'
-CSV_OPTIONS = {headers: true, header_converters: :symbol}
+CSV_OPTIONS = { headers: true, header_converters: :symbol }
 
 class BaseRepository
   attr_accessor :elements, :next_id, :csv_filepath

@@ -14,7 +14,7 @@ class OrderRepository < BaseRepository
   end
 
   def undelivered_orders
-    @elements.select { |order| !order.delivered? }
+    @elements.reject { |order| order.delivered? }
   end
 
   def create_object(row)
@@ -29,9 +29,9 @@ class OrderRepository < BaseRepository
 
   def update_csv
     CSV.open(@csv_filepath, "wb", CSV_OPTIONS) do |csv|
-      csv << [ "id", "delivered", "meal_id", "employee_id", "customer_id" ]
+      csv << ["id", "delivered", "meal_id", "employee_id", "customer_id"]
       @elements.each do |order|
-        csv << [order.id, order.delivered, order.meal.id, order.employee.id, order.customer.id ]
+        csv << [order.id, order.delivered, order.meal.id, order.employee.id, order.customer.id]
       end
     end
   end

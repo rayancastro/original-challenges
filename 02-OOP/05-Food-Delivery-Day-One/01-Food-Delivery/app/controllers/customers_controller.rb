@@ -2,7 +2,6 @@ require_relative 'base_controller.rb'
 require_relative '../repositories/customer_repository.rb'
 
 class CustomersController < BaseController
-
   def initialize(repository)
     super(repository)
   end

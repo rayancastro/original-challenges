@@ -1,5 +1,4 @@
 class View
-
   def ask_name
     puts "What's the name?"
     gets.chomp.to_s
@@ -36,15 +35,15 @@ class View
   end
 
   def display_orders(orders)
-    orders.each do |order|
-      puts "Customer: #{order.customer.name}, #{order.customer.address} - Meal: #{order.meal.name}, Employee: #{order.employee.username}"
+    orders.each do |e|
+      puts "#{e.customer.name}, #{e.customer.address} - Meal: #{e.meal.name}, Employee: #{e.employee.username}"
     end
   end
 
   def display_all(meals)
     # puts "**** LIST OF MEALS ****"
     meals.each do |meal|
-      puts "#{meal.name}"
+      puts meal.name.to_s
     end
     # puts "***** END OF LIST *****"
   end

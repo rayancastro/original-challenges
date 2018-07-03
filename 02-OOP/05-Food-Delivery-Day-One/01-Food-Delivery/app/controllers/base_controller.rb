@@ -1,7 +1,6 @@
 require_relative '../views/view.rb'
 
 class BaseController
-
   def initialize(repository)
     @repository = repository
     @view = View.new
