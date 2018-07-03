@@ -25,6 +25,11 @@ class View
     gets.chomp.to_i
   end
 
+  def ask_order_id
+    puts "What's the order_id?"
+    gets.chomp.to_i
+  end
+
   def ask_employee_id
     puts "What's the employee_id?"
     gets.chomp.to_i
@@ -32,7 +37,7 @@ class View
 
   def display_orders(orders)
     orders.each do |order|
-      puts "Meal: #{order.meal.name}, Employee: #{order.employee.username}, Customer: #{order.customer.name}, #{order.customer.address}"
+      puts "Customer: #{order.customer.name}, #{order.customer.address} - Meal: #{order.meal.name}, Employee: #{order.employee.username}"
     end
   end
 

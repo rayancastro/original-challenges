@@ -27,8 +27,6 @@ class OrderRepository < BaseRepository
     Order.new(object)
   end
 
-  private
-
   def update_csv
     CSV.open(@csv_filepath, "wb", CSV_OPTIONS) do |csv|
       csv << [ "id", "delivered", "meal_id", "employee_id", "customer_id" ]

@@ -31,11 +31,17 @@ class OrdersController
     @order_repository.add(order)
   end
 
-  def list_my_orders
-
+  def list_my_orders(employee)
+    my_orders = @order_repository.undelivered_orders.select { |order| employee.username == order.employee.username }
+    @view.display_orders(my_orders)
   end
 
-  def mark_as_delivered
-
+  def mark_as_delivered(employee)
+    id = @view.ask_order_id
+    order = @order_repository.undelivered_orders.find {|order| order.id == id}
+    binding.pry
+    order.deliver!
+    binding.pry
+    @order_repository.update_csv
   end
 end
