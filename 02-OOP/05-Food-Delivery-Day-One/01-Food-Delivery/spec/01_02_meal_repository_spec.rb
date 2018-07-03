@@ -34,7 +34,8 @@ describe "MealRepository", :meal do
 
   def elements(repo)
     repo.instance_variable_get(:@meals) ||
-      repo.instance_variable_get(:@elements)
+      repo.instance_variable_get(:@elements) ||
+        repo.instance_variable_get(:@records)
   end
 
   describe "#initialize" do

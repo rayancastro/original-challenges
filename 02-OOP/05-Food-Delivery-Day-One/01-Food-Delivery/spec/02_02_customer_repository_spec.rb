@@ -32,7 +32,8 @@ describe "CustomerRepository", :customer do
 
   def elements(repo)
     repo.instance_variable_get(:@customers) ||
-      repo.instance_variable_get(:@elements)
+      repo.instance_variable_get(:@elements) ||
+        repo.instance_variable_get(:@records)
   end
 
   describe "#initialize" do
