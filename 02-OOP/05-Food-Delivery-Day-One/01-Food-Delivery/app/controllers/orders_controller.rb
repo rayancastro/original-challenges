@@ -39,9 +39,7 @@ class OrdersController
   def mark_as_delivered(employee)
     id = @view.ask_order_id
     order = @order_repository.undelivered_orders.find {|order| order.id == id}
-    binding.pry
     order.deliver!
-    binding.pry
     @order_repository.update_csv
   end
 end
