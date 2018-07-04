@@ -41,7 +41,11 @@ customers_controller = CustomersController.new(customer_repository)
 orders_controller = OrdersController.new(meal_repository, employee_repository, customer_repository, order_repository)
 
 puts "Loading Router..."
-router = Router.new(meals: meals_controller, sessions: sessions_controller, customer: customers_controller, order: orders_controller)
+parameters = { meals: meals_controller,
+               sessions: sessions_controller,
+               customer: customers_controller,
+               order: orders_controller }
+router = Router.new(parameters)
 
 puts "Starting the Router..."
 router.run

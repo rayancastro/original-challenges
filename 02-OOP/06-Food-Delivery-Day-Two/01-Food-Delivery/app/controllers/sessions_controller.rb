@@ -15,7 +15,7 @@ class SessionsController
       @view.welcome(employee.username)
       return employee
     else
-      @view.try_again
+      # @view.try_again
       sign_in
     end
   end
