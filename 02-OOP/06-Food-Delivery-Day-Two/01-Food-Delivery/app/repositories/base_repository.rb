@@ -40,9 +40,9 @@ class BaseRepository
     end
   end
 
-  def update_csv
-    fail StandardError, "Please create this method in the subclass"
-  end
+  # def update_csv
+  #   fail StandardError, "Please create this method in the subclass"
+  # end
 
   def create_object(row)
     fail StandardError, "Please create this method in the subclass"

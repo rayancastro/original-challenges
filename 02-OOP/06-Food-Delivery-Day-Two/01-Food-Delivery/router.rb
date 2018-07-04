@@ -1,12 +1,24 @@
 # TODO: implement the router of your app.
 class Router
-  def initialize(controller)
-    @controller = controller
+  def initialize(controllers = {})
+    @meals_controller = controllers[:meals]
+    @sessions_controller = controllers[:sessions]
+    @customers_controller = controllers[:customers]
+    @orders_controller = controllers[:orders]
     @running = true
+    @logged_in = false
   end
 
   def run
-    puts "Welcome"
+    puts "Welcome to Express Larica!!"
+    puts "Sua comida na hora certa."
+
+    until @logged_in
+      display_log_options
+      choice = gets.chomp.to_i
+      print `clear`
+      log_in(choice)
+    end
 
     while @running
       display_tasks
