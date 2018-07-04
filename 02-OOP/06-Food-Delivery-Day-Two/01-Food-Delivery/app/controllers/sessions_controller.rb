@@ -7,10 +7,10 @@ class SessionsController
   end
 
   def sign_in
-    @view.clear
     username = @view.ask_username
     password = @view.ask_password
     employee = @employee_repository.find_by_username(username)
+    @view.clear
     if employee.password == password
       @view.welcome(employee.username)
       return employee

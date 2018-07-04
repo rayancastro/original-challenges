@@ -7,7 +7,7 @@ class BaseRepository
     @csv_filepath = csv_filepath
     @elements = []
     @next_id = 1
-    load_csv
+    load_csv if File.exist?(csv_filepath)
   end
 
   def increment_id
@@ -32,17 +32,15 @@ class BaseRepository
   private
 
   def load_csv
-    if File.exist?(csv_filepath)
-      CSV.foreach(csv_filepath, CSV_OPTIONS) do |row|
-        @elements << create_object(row)
-      end
-      @next_id = @elements[-1].id + 1
+    CSV.foreach(csv_filepath, CSV_OPTIONS) do |row|
+      @elements << create_object(row)
     end
+    @next_id = @elements[-1].id + 1
   end
 
-  # def update_csv
-  #   fail StandardError, "Please create this method in the subclass"
-  # end
+  def update_csv
+    fail StandardError, "Please create this method in the subclass"
+  end
 
   def create_object(row)
     fail StandardError, "Please create this method in the subclass"

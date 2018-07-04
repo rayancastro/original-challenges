@@ -6,11 +6,11 @@ require_relative './app/models/customer.rb'
 require_relative './app/models/employee.rb'
 require_relative './app/models/meal.rb'
 require_relative './app/models/order.rb'
-require_relative './app/repositories/base_repository'
-require_relative './app/repositories/customer_repository'
-require_relative './app/repositories/employeee_repository'
-require_relative './app/repositories/meal_repository'
-require_relative './app/repositories/order_repository'
+require_relative './app/repositories/base_repository.rb'
+require_relative './app/repositories/customer_repository.rb'
+require_relative './app/repositories/employee_repository.rb'
+require_relative './app/repositories/meal_repository.rb'
+require_relative './app/repositories/order_repository.rb'
 require_relative './app/controllers/base_controller.rb'
 require_relative './app/controllers/customers_controller.rb'
 require_relative './app/controllers/meals_controller.rb'
@@ -32,7 +32,7 @@ puts "Loading Repositories..."
 meal_repository = MealRepository.new(meals_csv)
 employee_repository = EmployeeRepository.new(employees_csv)
 customer_repository = CustomerRepository.new(customers_csv)
-order_repository = OrderRepository.new(orders_csv)
+order_repository = OrderRepository.new(orders_csv, meal_repository, employee_repository, customer_repository)
 
 puts "Loading Controllers..."
 meals_controller = MealsController.new(meal_repository)
