@@ -1,12 +1,34 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 require "sqlite3"
+require_relative "helper.rb"
 
 DB = SQLite3::Database.new(File.join(File.dirname(__FILE__), 'db/jukebox.sqlite'))
 
 get "/" do
+  @artists = display_all
   # TODO: Gather all artists to be displayed on home page
-  erb :home # Will render views/home.erb file (embedded in layout.erb)
+  erb :home
+end
+
+get "/artists/:id" do
+  @albums = display_albums(params[:id].to_i)
+  # TODO: Gather all artists to be displayed on home page
+  erb :artist_page
+end
+
+get "/albums/:id" do
+  # @test = params
+  @tracks = display_tracks(params[:id].to_i)
+  # erb :test
+  erb :album_page
+end
+
+get "/tracks/:id" do
+  # @test = params
+  @track = track_from_id(params[:id].to_i)
+  # erb :test
+  erb :track_page
 end
 
 # Then:
