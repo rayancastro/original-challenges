@@ -28,31 +28,31 @@ class Record
   end
 
   def self.all
-    table_name = self.name.to_s.downcase + "s"
+    table_name = name.to_s.downcase + "s"
     result = []
     query = "SELECT * FROM #{table_name}"
     DB.results_as_hash = true
     DB.execute(query).each do |record|
-      params = {}
-      record.each do |key, value|
-        params[key.to_sym] = value if key.class == String
-      end
-      result << self.new(params)
+      result << new(get_params(record))
     end
     return result
   end
 
+  def self.get_params(record)
+    params = {}
+    record.each do |key, value|
+      params[key.to_sym] = value if key.class == String
+    end
+    params
+  end
+
   def self.find(id)
-    table_name = self.name.to_s.downcase + "s"
+    table_name = name.to_s.downcase + "s"
     query = "SELECT * FROM #{table_name} WHERE id = ?"
     DB.results_as_hash = true
     record = DB.execute(query, id).first
-    params = {}
     if record
-      record.each do |key, value|
-        params[key.to_sym] = value if key.class == String
-      end
-      self.new(params)
+      return new(get_params(record))
     else
       return nil
     end
