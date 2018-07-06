@@ -10,6 +10,7 @@ class Post
   end
 
   def destroy
-    # TODO: destroy the current instance from the database
+    query = "DELETE FROM posts WHERE id = ?"
+    DB.execute(query, @id)
   end
 end
