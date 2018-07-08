@@ -1,5 +1,10 @@
 class CreatePosts < ActiveRecord::Migration[5.1]
-  def change
-    # TODO: your code here to create the posts table
+  def up
+    create_table :posts do |t|
+      t.string     :title
+      t.string     :url
+      t.timestamps
+      t.timestamps
+    end
   end
 end
