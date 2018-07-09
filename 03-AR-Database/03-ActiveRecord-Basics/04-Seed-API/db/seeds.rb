@@ -14,7 +14,6 @@ def latest_hacker_posts(num)
     post = Post.new(title: item["title"], url: item["url"], votes: item["score"])
     post.save
   end
-
 end
 
 latest_hacker_posts(10)

@@ -49,5 +49,4 @@ class PostsController
     post.votes += 1
     post.save
   end
-
 end

@@ -9,7 +9,6 @@ N.times do
                   url:   Faker::Internet.url,
                   votes: rand(0..N))
   post.save
-
 end
 puts "Finished!"
 
