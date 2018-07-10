@@ -1,7 +1,7 @@
 require 'active_record'
 require 'sqlite3'
 require 'yaml'
-
+require 'faker'
 # This is some boilerplate code to read the config/database.yml file
 # And connect to the database
 config_path = File.join(File.dirname(__FILE__), "database.yml")
