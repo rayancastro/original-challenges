@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "sqlite3"
 require_relative "helper.rb"
+require_relative "scrapper.rb"
 
 DB = SQLite3::Database.new(File.join(File.dirname(__FILE__), 'db/jukebox.sqlite'))
 
@@ -27,6 +28,8 @@ end
 get "/tracks/:id" do
   # @test = params
   @track = track_from_id(params[:id].to_i)
+  @embed_url = generate_embed_url(scrape_youtube(@track[0][0].to_s))
+  # @test = @track[0][0].to_s
   # erb :test
   erb :track_page
 end

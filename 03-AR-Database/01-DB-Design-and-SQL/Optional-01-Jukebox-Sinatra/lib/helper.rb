@@ -39,4 +39,3 @@ def track_from_id(track_id)
   SQL
   DB.execute(query)
 end
-

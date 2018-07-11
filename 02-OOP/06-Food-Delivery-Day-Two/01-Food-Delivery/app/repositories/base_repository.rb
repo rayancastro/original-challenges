@@ -20,9 +20,14 @@ class BaseRepository
 
   def add(element)
     element.id = next_id
-    elements.push(element)
+    @elements.push(element)
     increment_id
     update_csv
+  end
+
+  def delete(id)
+    element = find(id)
+    @elements.delete(element)
   end
 
   def find(id)

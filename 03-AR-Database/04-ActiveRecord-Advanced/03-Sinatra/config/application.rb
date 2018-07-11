@@ -1,6 +1,10 @@
 require 'active_record'
 require 'sqlite3'
 require 'yaml'
+require "json"
+require "rest-client"
+require "pry-byebug"
+require "faker"
 
 # This is some boilerplate code to read the config/database.yml file
 # And connect to the database

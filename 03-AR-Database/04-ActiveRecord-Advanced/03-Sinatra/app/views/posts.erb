@@ -1,3 +1,9 @@
 <h1>Hacker News</h1>
 
 # TODO: list posts here. You can use instance variables set in the controller (app.rb)
+
+<% @posts.order('votes DESC').limit(10).each do |post| %>
+<h2><a href="<%=post.url%>" ><%= post.name %></a></h2>
+<p><%= post.votes %></p>
+<p>----------------------------------------------------------------</p>
+<% end %>

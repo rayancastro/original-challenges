@@ -23,12 +23,34 @@ class OrdersController
 
   def add
     attributes = {}
+    @view.display_meals(@meal_repository.all)
     attributes[:meal] = @meal_repository.find(@view.ask_meal_id)
+    @view.display_customers(@customer_repository.all)
     attributes[:customer] = @customer_repository.find(@view.ask_customer_id)
+    @view.display_employees(@employee_repository.all)
     attributes[:employee] = @employee_repository.find(@view.ask_employee_id)
     order = Order.new(attributes)
     @order_repository.add(order)
   end
+
+  # Customer
+
+  def list_customer_orders(customer)
+    my_orders = @order_repository.user_orders(customer)
+    @view.display_to_customer(my_orders)
+  end
+
+  def place_order(customer)
+    attributes = {}
+    @view.display_meals(@meal_repository.all)
+    attributes[:meal] = @meal_repository.find(@view.ask_meal_id_customer)
+    attributes[:customer] = customer
+    attributes[:employee] = @employee_repository.all_delivery_guys.sample
+    order = Order.new(attributes)
+    @order_repository.add(order) if order
+  end
+
+  # Delivery guy
 
   def list_my_orders(employee)
     my_orders = @order_repository.undelivered_orders.select { |order| employee.username == order.employee.username }

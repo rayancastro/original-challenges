@@ -13,5 +13,11 @@ class BaseController
   def add
     object = create_object
     @repository.add(object)
+    object
+  end
+
+  def delete
+    id = @view.ask_id
+    @repository.delete(id)
   end
 end

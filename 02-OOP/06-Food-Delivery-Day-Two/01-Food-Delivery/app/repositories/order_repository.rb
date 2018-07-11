@@ -13,6 +13,10 @@ class OrderRepository < BaseRepository
     super(csv_filepath)
   end
 
+  def user_orders(customer)
+    @elements.select { |order| order.customer == customer }
+  end
+
   def undelivered_orders
     @elements.reject { |order| order.delivered? }
   end
@@ -29,9 +33,9 @@ class OrderRepository < BaseRepository
 
   def update_csv
     CSV.open(@csv_filepath, "wb", CSV_OPTIONS) do |csv|
-      csv << ["id", "delivered", "meal_id", "employee_id", "customer_id"]
+      csv << ["id", "delivered", "meal_id", "employee_id", "customer_id", "time"]
       @elements.each do |order|
-        csv << [order.id, order.delivered, order.meal.id, order.employee.id, order.customer.id]
+        csv << [order.id, order.delivered, order.meal.id, order.employee.id, order.customer.id, order.time]
       end
     end
   end
