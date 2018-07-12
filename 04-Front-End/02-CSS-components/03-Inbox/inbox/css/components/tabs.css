@@ -1,1 +1,22 @@
-/* Your tabs CSS code here */
+.tabs {
+  display: flex;
+  width: 100vw;
+}
+
+.tabs-item {
+  text-decoration: none;
+  color: rgb(120, 120, 120);
+  padding: 15px 15px;
+  font-size: 1.2em;
+}
+
+.tabs-item:hover {
+  color: black;
+  background: rgb(235, 235, 235);
+  font-weight: bold;
+}
+
+.active {
+  font-weight: bold;
+  border-bottom: 5px solid #2196F3;
+}
