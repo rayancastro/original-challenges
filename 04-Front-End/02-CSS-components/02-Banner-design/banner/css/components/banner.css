@@ -1,1 +1,23 @@
-/* Your banner CSS file */
+.banner {
+  background: linear-gradient(-255deg,rgb(0,0,0,0.4), rgb(0,0,0,0.5)), url("../../images/background-hostel.jpeg");
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  background-size: cover;
+  color: white;
+}
+
+.banner-item h1 {
+  margin-bottom: 10px;
+  font-size: 3.5em;
+}
+
+.banner-item h3 {
+  margin-bottom: 55px;
+  margin-top: 0px;
+  font-size: 1.4em;
+}
+
