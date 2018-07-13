@@ -14,7 +14,7 @@ class SessionsController
     username = @view.ask_username
     password = @view.ask_password
     employee = @employee_repository.find_by_username(username)
-    @view.clear
+    # @view.clear
     if employee && employee.password == password
       @view.welcome(employee.username)
       return employee

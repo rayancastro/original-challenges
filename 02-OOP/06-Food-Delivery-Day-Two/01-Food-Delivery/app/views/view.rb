@@ -52,7 +52,8 @@ class View
   def display_orders(orders)
     clear
     orders.each do |e|
-      puts "#{e.id} - #{e.customer.name}, #{e.customer.address} - Meal: #{e.meal.name}, Employee: #{e.employee.username}"
+      puts "#{e.id} - #{e.customer.name}, #{e.customer.address} - Meal: #{e.meal.name},
+      Employee: #{e.employee.username}"
     end
   end
 
@@ -61,8 +62,9 @@ class View
     puts "Hello #{orders.first.customer.name}. This is your order history:"
     orders.each do |order|
       delivered = order.delivered? ? "Delivered" : "On the way"
-      # Hora que foi feito o pedido. O que foi pedido. Preço. Nome do entregador. Endereço
-      puts "#{order.time} | #{order.meal.name} ($#{format("%.2f",order.meal.price)}) | #{delivered} | Delivery guy: #{order.employee.username} | Address: #{order.customer.address}"
+      # Hora que foi feito o pedido. O que foi pedido. Preco. Nome do entregador. Endereco
+      puts "#{order.time} | #{order.meal.name} ($#{format('%.2f', order.meal.price)}) |
+       #{delivered} | Delivery guy: #{order.employee.username} | Address: #{order.customer.address}"
     end
   end
 
@@ -76,7 +78,7 @@ class View
   def display_meals(elements)
     clear
     elements.each do |element|
-      puts "ID: #{element.id} - #{element.name} - $#{format("%.2f",element.price)}"
+      puts "ID: #{element.id} - #{element.name} - $#{format('%.2f', element.price)}"
     end
   end
 

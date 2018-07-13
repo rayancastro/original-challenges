@@ -21,9 +21,8 @@ class CustomersController < BaseController
   end
 
   def find_by_name(name)
-    @repository.all.find { |element| element.name == name}
+    @repository.all.find { |element| element.name == name }
   end
-
 
   def create_object
     name = @view.ask_name
