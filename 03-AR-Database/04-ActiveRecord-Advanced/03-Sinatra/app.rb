@@ -11,19 +11,19 @@ end
 set :views, (proc { File.join(root, "app/views") })
 set :bind, '0.0.0.0'
 
-
-def latest_hacker_posts(num)
+def parse
   url = "https://hacker-news.firebaseio.com/v0/"
   response = RestClient.get(url + "topstories.json")
-  top_stories = JSON.parse(response)
+  JSON.parse(response)
+end
+
+def latest_hacker_posts(num)
+  top_stories = parse
   top_stories[0..num - 1].each do |id|
     item_response = RestClient.get(url + "item/" + id.to_s + ".json")
     item = JSON.parse(item_response)
-    if post = Post.all.where('name = ?', item["title"]).first
-      post.votes = item["score"]
-    else
-      post = Post.new(name: item["title"], url: item["url"], votes: item["score"])
-    end
+    post = Post.all.where('name = ?', item["title"]).first if Post.all.where('name = ?', item["title"]).first
+    post ? post.votes = item["score"] : post = Post.new(name: item["title"], url: item["url"], votes: item["score"])
     post.save
   end
 end
@@ -31,7 +31,7 @@ end
 
 
 get '/' do
-latest_hacker_posts(10)
+  latest_hacker_posts(10)
   @posts = Post.all
   erb :posts # Do not remove this line
 end
