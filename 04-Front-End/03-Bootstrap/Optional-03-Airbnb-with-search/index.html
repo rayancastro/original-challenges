@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8">
     <title>Airbnb home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
@@ -18,17 +19,165 @@
   <body>
 
     <!-- Your banner code -->
-
+    <div class="banner">
+      <div class="banner-content">
+        <h1>Le Wagon Berlin</h1>
+        <p>Learn to code with us in Berlin</p>
+        <form action="#" class="form-inline">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="checkin">
+            <input type="text" class="form-control" placeholder="checkout">
+            <select name="num-guests" id="" class="form-control">
+              <option value="">1 guest</option>
+              <option value="">2 guests</option>
+              <option value="">3+ guests</option>
+            </select>
+          </div>
+          <input type="submit" value="Search" class="btn btn-primary">
+        </form>
+      </div>
+    </div>
     <!-- Your features code -->
-
+    <div class="text-center container">
+      <div class="feature">
+        <img src="images/globe.png" alt="" class="item">
+        <h2>Discover the world</h2>
+        <p>The earth is your new home.</p>
+      </div>
+      <div class="feature">
+        <img src="images/dollar.png" alt="" class="item">
+        <h2>Pay online</h2>
+        <p>No cash issues anymore.</p>
+      </div>
+      <div class="feature">
+        <img src="images/beer.png" alt="" class="item">
+        <h2>Meet people</h2>
+        <p>Discover new culture and lifestyle.</p>
+      </div>
+      <div class="feature">
+        <img src="images/heart.png" alt="" class="item">
+        <h2>Share and love</h2>
+        <p>Join a community you will love.</p>
+      </div>
+    </div>
     <!-- Your cards code -->
 
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
+            <div class="card-category">Brussels</div>
+            <div class="card-description">
+              <h2>Anne's home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user" src="images/anne.jpg">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
+            <div class="card-category">London</div>
+            <div class="card-description">
+              <h2>Romain's home</h2>
+              <p>Nice flat next to the Big Bang</p>
+            </div>
+            <img class="card-user" src="images/romain.jpeg">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+            <div class="card-category">Paris</div>
+            <div class="card-description">
+              <h2>Sebastian's home</h2>
+              <p>Charming room with patio</p>
+            </div>
+            <img class="card-user" src="images/seb.jpg">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
+            <div class="card-category">Brussels</div>
+            <div class="card-description">
+              <h2>Anne's home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user" src="images/anne.jpg">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
+            <div class="card-category">London</div>
+            <div class="card-description">
+              <h2>Romain's home</h2>
+              <p>Nice flat next to the Big Bang</p>
+            </div>
+            <img class="card-user" src="images/romain.jpeg">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+            <div class="card-category">Paris</div>
+            <div class="card-description">
+              <h2>Sebastian's home</h2>
+              <p>Charming room with patio</p>
+            </div>
+            <img class="card-user" src="images/seb.jpg">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Your newsletter code -->
-
+    <div class="text-center newsletter">
+      <h2>Get news from us</h2>
+      <p>Leave us your mail and get news from us</p>
+      <form action="#">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="rayan@gmail.com">
+        </div>
+        <input type="submit" value="Subscribe" class="btn btn-primary">
+      </form>
+    </div>
     <!-- Your map code -->
+    <div id="map" style="width: 100%; height: 400px;"></div>
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+    var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
+
+    var myOptions = {
+      zoom: 16,
+      center: myLatlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [] // TODO: replace [] with an array from https://snazzymaps.com/
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: "You are here!"
+    });
+    </script>
     <!-- Your footer code -->
-
+    <div class="text-center footer-wrapper">
+      <div class="list-inline">
+        <a href="" class="media-icons"><i class="fab fa-youtube"></i></a>
+        <a href="" class="media-icons"><i class="fab fa-instagram"></i></a>
+        <a href="" class="media-icons"><i class="fab fa-facebook-f"></i></a>
+        <a href="" class="media-icons"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p>This is a Airbnb Home Challenge @ LeWagon</p>
+    </div>
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

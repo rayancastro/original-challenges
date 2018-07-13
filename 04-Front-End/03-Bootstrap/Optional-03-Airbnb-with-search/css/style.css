@@ -22,3 +22,26 @@ h2 {
 .wrapper-grey {
   background: #F4F4F4;
 }
+
+.item {
+  width: 100px;
+}
+
+.feature {
+  margin: 40px 0;
+}
+
+.feature h2 {
+  margin: 10px;
+}
+
+.newsletter {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.newsletter h2 {
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
