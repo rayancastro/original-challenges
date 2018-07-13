@@ -1,1 +1,21 @@
 /* Footer design */
+.footer-wrapper {
+  background-color: #424242;
+  color: rgba(230, 230, 230, 1);
+  height: 150px;
+}
+
+.footer-wrapper a {
+  text-decoration: none;
+  color: rgba(230, 230, 230, 1);
+  transition: color 0.8s ease;
+  font-size: 30px;
+}
+
+.footer-wrapper i {
+  margin: 30px 20px;
+}
+.footer-wrapper a:hover {
+  color: #FFEB3B;
+}
+
