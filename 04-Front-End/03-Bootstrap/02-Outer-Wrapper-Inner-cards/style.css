@@ -11,3 +11,12 @@ h2 {
   color: #828282;
   padding: 50px;
 }
+
+.wrapper-one {
+  background: cyan;
+}
+.card {
+  background: rgb(140, 140, 140);
+  margin: 50px;
+  padding: 20px;
+}
