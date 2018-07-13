@@ -1,8 +1,12 @@
 .card {
   background-size: cover;
+  display: flex;
+  justify-content: space-around;
   background-position: center;
   color: white;
-  font-size: 50px;
+  font-size: 25px;
   text-align: center;
+  text-shadow: 1px 1px 1px black;
   padding: 50px;
+  margin: 15px 10px;
 }
