@@ -1,1 +1,25 @@
 /* Your banner CSS code here */
+.banner {
+  background: linear-gradient(-255deg,rgb(0,0,0,0.4), rgb(0,0,0,0.5)), url("../../images/background.jpg");
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  background-size: cover;
+  color: white;
+  margin: 0;
+}
+
+.banner-item h1 {
+  margin-bottom: 10px;
+  font-size: 3.5em;
+}
+
+.banner-item h3 {
+  margin-bottom: 55px;
+  margin-top: 0px;
+  font-size: 1.4em;
+}
+

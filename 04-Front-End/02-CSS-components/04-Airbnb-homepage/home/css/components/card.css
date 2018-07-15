@@ -1,1 +1,93 @@
-/* Your card CSS code here */
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 0;
+  border-radius: 3px;
+}
+
+.card-wrapper {
+  background-color: white;
+  margin: 10px 20px 10px 20px;
+  padding: 0 0 10px 0;
+  transition-duration: 0.5s;
+  box-shadow: 1px 1px 1px 1px rgba(140, 140, 140, 0.5);
+  border-radius: 3px;
+  position: relative;
+  top: 0;
+}
+
+.card-wrapper:hover {
+  padding-bottom: 20px;
+  top: -10px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+  font-size: 0.9em;
+}
+
+.card-footer p {
+  padding-top: 14px;
+  margin-left: 5px;
+}
+
+.card-footer i {
+  margin-right: 5px;
+  transition-duration: 0.5s;
+}
+.card-footer i:last-child {
+  margin-right: 15px
+}
+
+.card-footer i:hover {
+  color: #FFC107;
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 1;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+

@@ -7,11 +7,13 @@ body {
   margin: 0;
   margin-bottom: 100px;
   font-family: 'Varela Round', sans-serif;
+  background-color: rgba(215, 215, 215, 1);
 }
 .text-center {
   text-align: center;
 }
+
 .container {
-  max-width: 1000px;
-  margin: 50px auto;
+  margin: 0;
+  padding: 0;
 }
