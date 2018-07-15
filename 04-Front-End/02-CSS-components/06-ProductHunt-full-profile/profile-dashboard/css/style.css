@@ -40,11 +40,11 @@ a {
   margin-left: 15px;
 }
 
-.product-upvote {
+.product-upvotes {
   transition: all 0.15s ease;
   margin-left: 10px;
 }
-.product-arrow {
+.product-arrows {
   transition: all 0.15s ease;
 }
 
@@ -54,35 +54,16 @@ a {
   cursor: pointer;
 }
 /* Upvote gets a bit bigger */
-.product:hover .product-upvote {
+.product:hover .product-upvotes {
   transform: scale(1.2);
 }
 
 /* 2 - Hover effects on product-upvote */
 
 /* Text color turns blue */
-.product-upvote:hover {
+.product-upvotes:hover {
   color: #5898f1;
   cursor: pointer;
 }
 /* Arrow triangle turns blue */
-.product-upvote:hover .product-arrow {
-  border-bottom: 9px solid #5898f1;
-}
-
-.product-controls i {
-  margin-right: 30px;
-  color: rgba(167, 167, 167, 1);
-}
-
-.product-controls i:hover {
-  color: #F44336;
-}
-
-.product-image {
-  height: 80px;
-  width: 160px;
-  border-radius: 8px;
-  margin: 15px;
-}
 

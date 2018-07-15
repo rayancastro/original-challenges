@@ -2,3 +2,22 @@
 .profile-header-wrapper {
   background-color: #5D4037;
 }
+.product-upvotes:hover .product-arrows {
+  border-bottom: 9px solid #5898f1;
+}
+
+.product-controls i {
+  margin-right: 30px;
+  color: rgba(167, 167, 167, 1);
+}
+
+.product-controls i:hover {
+  color: #F44336;
+}
+
+.product-image {
+  height: 80px;
+  width: 160px;
+  border-radius: 8px;
+  margin: 15px;
+}
