@@ -1,1 +1,25 @@
-/* Your tabs CSS code here */
+.tabs {
+  display: flex;
+}
+
+.tab {
+  flex: 1 1 auto;
+  background-color: #A1887F;
+  color: white;
+}
+
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+.active {
+  background: white;
+  color: black;
+}
+
+.tab:hover {
+  opacity: 0.8;
+}
