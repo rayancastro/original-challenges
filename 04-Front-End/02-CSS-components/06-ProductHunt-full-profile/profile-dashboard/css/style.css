@@ -4,6 +4,7 @@
 @import url("components/list.css");
 
 body {
+  background-color: rgba(220, 220, 220, 1);
   margin: 0;
   font-family: Open-sans, sans-serif;
 }
@@ -26,3 +27,62 @@ a {
 .list-inline {
   list-style: none;
 }
+
+.product {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.product-body {
+  flex: 1 0 auto;
+  margin-left: 15px;
+}
+
+.product-upvote {
+  transition: all 0.15s ease;
+  margin-left: 10px;
+}
+.product-arrow {
+  transition: all 0.15s ease;
+}
+
+/* Background turns grey & cursor becomes Mickey Mouse's hand*/
+.product:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+/* Upvote gets a bit bigger */
+.product:hover .product-upvote {
+  transform: scale(1.2);
+}
+
+/* 2 - Hover effects on product-upvote */
+
+/* Text color turns blue */
+.product-upvote:hover {
+  color: #5898f1;
+  cursor: pointer;
+}
+/* Arrow triangle turns blue */
+.product-upvote:hover .product-arrow {
+  border-bottom: 9px solid #5898f1;
+}
+
+.product-controls i {
+  margin-right: 30px;
+  color: rgba(167, 167, 167, 1);
+}
+
+.product-controls i:hover {
+  color: #F44336;
+}
+
+.product-image {
+  height: 80px;
+  width: 160px;
+  border-radius: 8px;
+  margin: 15px;
+}
+
