@@ -26,7 +26,7 @@ module.exports = function runChallenges(check) {
   // Ex 3. Replace the email hint (next to the input) with 'This is my email now'
   //       The text should be emphasized using a <strong> tag
   let emailHint = document.getElementById("email-hint");
-  emailHint.innerHTML = "This is my email now"
+  emailHint.innerHTML = "This is my email now";
 
 
   // Ex 4. Add the .blue CSS class to the table header cells (th elements)
@@ -48,13 +48,13 @@ module.exports = function runChallenges(check) {
   //       Add a row at the bottom, this new team should have zero points.
   let table = document.querySelector("tbody");
   let newrow = table.appendChild(document.createElement('tr'));
-  let newrank = document.createElement('td')
+  let newrank = document.createElement('td');
   let t = document.createTextNode("15");
   newrank.appendChild(t);
   let newname = document.createElement('td');
   let t2 = document.createTextNode("The Unstoppable Chaves");
   newname.appendChild(t2);
-  let newpoints = document.createElement('td')
+  let newpoints = document.createElement('td');
   let t3 = document.createTextNode("0");
   newpoints.appendChild(t3);
   newrow.appendChild(newrank);
@@ -65,16 +65,24 @@ module.exports = function runChallenges(check) {
   //       Make the function summarizePoints() return it
   function summarizePoints() {
     // TODO: return the sum
-
+    let sum = 0;
+    let rows = document.querySelector("tbody").rows;
+    for (let i = 0; i < rows.length; i += 1) {
+      sum += parseInt(rows[i].cells[2].innerText, 10);
+    }
+    return sum;
   }
 
 
   // Ex 8. Change the background color of all table header cells to #DDF4FF
-
+  tableHeader.forEach((th) => {
+    th.style.backgroundColor = "#DDF4FF";
+  });
 
 
   // Ex 9. Remove the "Email:" label from the DOM
-
+  let label = document.querySelector('label');
+  label.parentNode.removeChild(label);
 
 
 
