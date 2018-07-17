@@ -20,7 +20,7 @@ function newMessage() {
 
 function appendMessageToDom(message) {
   // TODO: append the given message to the DOM (as a new row of `#inbox`)
-  const inbox = document.getElementById("inbox")
+  const inbox = document.getElementById("inbox");
   inbox.insertAdjacentHTML('beforeEnd', `<div class="row message unread"><div class="col-xs-3">${message.sender}</div><div class="col-xs-9">${message.subject}</div></div>`);
 }
 
@@ -28,9 +28,9 @@ function refresh() {
   // TODO: Implement the global refresh logic. If there is a new message,
   //       append it to the DOM. Update the unread counter in title as well.
   if (hasNewMessage()) {
-    let countElement = document.getElementById("count");
-    let count = countElement.innerText;
-    countnum = parseInt(count.substr(1,count.length - 2), 10)
+    const countElement = document.getElementById("count");
+    const count = countElement.innerText;
+    let countnum = parseInt(count.substr(1, count.length - 2), 10);
     appendMessageToDom(newMessage());
     countnum += 1;
     countElement.innerText = `(${countnum})`;
