@@ -14,13 +14,14 @@ module.exports = function runChallenges(check) {
   //       Make the function getEmail() return it
   function getEmail() {
     // TODO: return the email
+    let emailInput = document.getElementById("email");
+    return emailInput.value;
   }
 
 
   // Ex 2. Change the content of the email input by writing your own email address
-
-
-
+  let emailInput = document.getElementById("email");
+  emailInput.value = "rayancdc@gmail.com";
 
   // Ex 3. Replace the email hint (next to the input) with 'This is my email now'
   //       The text should be emphasized using a <strong> tag
