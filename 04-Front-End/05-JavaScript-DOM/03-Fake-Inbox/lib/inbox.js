@@ -2,14 +2,25 @@
 
 function hasNewMessage() {
   // TODO: return true with a probability of 20%.
+  if (Math.floor(Math.random() * 100) <= 20) {
+    return true;
+  }
+  return false;
 }
 
 function newMessage() {
   // TODO: return a random message as an object with two keys, subject and sender
+  const senders = ['Wagon', 'GitHub Team', 'HortaLab', 'CapsCorp', 'Wayne Ent.'];
+  const company = senders[Math.floor(Math.random() * senders.length)];
+  return {
+    sender: company,
+    subject: `Welcome to ${company}`
+  };
 }
 
 function appendMessageToDom(message) {
   // TODO: append the given message to the DOM (as a new row of `#inbox`)
+
 }
 
 function refresh() {
