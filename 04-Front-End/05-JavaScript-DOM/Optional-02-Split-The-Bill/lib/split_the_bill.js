@@ -9,15 +9,14 @@ function convertObjectToMap(object) {
 
 function splitTheBill(group) {
   // TODO: implement the method and return a hash
-  const values = Object.values(group);
   const mappedGroup = convertObjectToMap(group);
   let total = 0;
-  values.forEach((value) => {
+  mappedGroup.forEach((value) => {
   // For each person, add the spent value to total
     total += value;
   });
   // get the average from the total
-  const average = total / values.length;
+  const average = total / Object.keys(group).length;
   // for each person, the total to receive is what he has spent - average
   const result = {};
   mappedGroup.forEach((value, key) => {
