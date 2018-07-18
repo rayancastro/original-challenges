@@ -1,9 +1,13 @@
 function convertObjectToMap(object) {
   const map = new Map();
-  const entries = Object.entries(object);
-  entries.forEach((pair) => {
-    map.set(pair[0], pair[1]);
+  // const entries = Object.entries(object);
+  const keys = Object.keys(object);
+  keys.forEach((key) => {
+    map.set(key, object[key]);
   });
+  // entries.forEach((pair) => {
+  //   map.set(pair[0], pair[1]);
+  // });
   return map;
 }
 
