@@ -3,8 +3,8 @@
   height: 10vw;
   width: 10vw;
   background-color: rgba(225, 225, 225, 1);
-
 }
+
 .racer_table td.active {
   background-repeat: no-repeat;
   background-size: 100%;
