@@ -15,11 +15,25 @@
     <!-- TODO: Put your HTML code in here -->
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
       <div class="banner-content">
-        <h1>Geocoder</h1>
-        <h3>Enter your address:</h2>
+        <h1>Mistery Geocoder</h1>
+        <h3>Are you feeling adventurous?!</h2>
         <form action="" type="fetch" id="form">
           <div class="form-group">
             <input type="text" name="address" id="address">
+            <div class="checks">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="shape" id="square" value="option1">
+                <label class="form-check-label" for="square">Square</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="shape" id="circle" value="option2">
+                <label class="form-check-label" for="circle">Circle</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="shape" id="random" value="option1">
+                <label class="form-check-label" for="random">Mistery Shape</label>
+              </div>
+            </div>
             <button type="submit" class="btn btn-primary" id="button">Get map!</button>
           </div>
         </form>
