@@ -2,5 +2,8 @@
   "name": "01-Geocoder",
   "version": "1.0.0",
   "main": "lib/app.js",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "gmaps": "^0.4.24"
+  }
 }
