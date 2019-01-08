@@ -1,3 +1,5 @@
+FrozenStringLiteralComment:
+  Enabled: false
 ConditionalAssignment:
   Enabled: false
 StringLiterals:
@@ -40,8 +42,12 @@ MissingRespondToMissing:
   Enabled: false
 Security/Open:
   Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
 
 AllCops:
+  TargetRubyVersion: 2.4
   Exclude:
     - '**/Rakefile'
     - '**/spec/**/*'
+    - '**/db/schema.rb'

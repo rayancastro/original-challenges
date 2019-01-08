@@ -1,6 +1,6 @@
 ## Setup
 
-Again, let's continue building our profile page and copy our previous profile in the current directory of this challenge:
+Again if you haven't copied the files from the previous exercise yet, let's move the profile folder from the previous exercise in the current directory of this challenge:
 
 ```bash
 cp -r ../02-Fonts-and-colors/profile .
@@ -9,6 +9,8 @@ cp -r ../02-Fonts-and-colors/profile .
 ## Background & Objectives
 
 Play with the box model (`margin/border/padding/width/height`) by splitting your profile information into different `<div>` tags.
+
+Don't forget to **hard refresh** your browser (`cmd + shift + r`) to clear your browser's cache if your page doesn't seem to display your current code!
 
 ## Specs
 
@@ -73,4 +75,18 @@ Try to resize your window to understand how media queries work.
 ### ⚠️⚠️⚠️ Be careful with the order of your media queries ⚠️⚠️⚠️
 
 As with `if` statements in ruby, order matters! If several conditions are `true`, the last CSS rule will be applied.
+
+## Finished?
+
+Once you've finished you can push this exercise and copy the content to the next exercise folder with this command:
+
+```bash
+# Push to Gihtub
+git add .
+git commit -m "Added div to my profile page"
+git push origin master
+
+# Copy folder into next exercise folder
+cp -r profile ../04-Advanced-selectors
+```
 

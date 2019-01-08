@@ -24,7 +24,7 @@ serve
 (it has been defined in an [alias](https://github.com/lewagon/dotfiles/blob/f894306fd81502f1fe513dd253e3129f4b56874d/aliases#L7))
 
 - You can now visit your files on [http://localhost:8000](http://localhost:8000)
-- Sometimes, you may have to kill the server with **Ctrl + C** and start it again with `serve`.
+- /!\ Modern browsers cache the **file** returned by a given **url**. It keeps in memory a version of your HTML (`http://localhost:8000`), of your CSS (`http://localhost:8000/style.css`) and even of your images (`http://localhost:8000/images/logo.png`)! Sometimes, the older version remains and your newest code is not taken into consideration. To fix this, use `cmd + shift + r` to **hard refresh** your page (this clears the cache in the process) 👌
 
 ## Specs
 
@@ -112,3 +112,20 @@ Or this one:
 ```
 
 Indent your HTML! Your code should look like a [V formation of ducks](https://upload.wikimedia.org/wikipedia/commons/0/0b/Eurasian_Cranes_migrating_to_Meyghan_Salt_Lake.jpg) 🦆🦆🦆!
+
+## Finished?
+
+Once you've finished you can push this exercise and copy the content to the next exercise folder with this command:
+
+```bash
+# Push to gihtub
+git add .
+git commit -m "Added content to my profile page"
+git push origin master
+
+# Copy folder into next exercise folder
+cp -r profile ../02-Fonts-and-colors
+```
+
+
+
