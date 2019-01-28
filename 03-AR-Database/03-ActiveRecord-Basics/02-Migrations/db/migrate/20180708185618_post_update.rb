@@ -3,3 +3,5 @@ class PostUpdate < ActiveRecord::Migration[5.1]
     add_column :posts, :votes, :integer, default: 0, null: false
   end
 end
+
+#

@@ -5,3 +5,5 @@ class Album < ActiveRecord::Base
   belongs_to :artist, class_name: "Artist", foreign_key: "id_artist"
   validates_presence_of :title, :artist
 end
+
+#
