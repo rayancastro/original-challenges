@@ -4,7 +4,7 @@ require_relative "browser"
 
 browser = Browser.new
 
-# Loop until user wants to exit
+# Loop until user wants to exit.
 url = nil
 while url != ""
   puts 'Where do you wanna go?'
