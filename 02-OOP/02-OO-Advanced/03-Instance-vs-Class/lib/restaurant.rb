@@ -1,5 +1,5 @@
 class Restaurant
-  # TODO: add relevant accessors if necessary
+  # TODO: add relevant accessors if necessary.
   attr_reader :name, :city, :average_rating
 
   def initialize(city, name)
