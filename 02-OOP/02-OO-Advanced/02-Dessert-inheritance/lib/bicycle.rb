@@ -1,6 +1,6 @@
 class Bicycle
   attr_reader :gears, :wheels, :seats
-  #My bicicle
+  # My bicicle
 
   def initialize(gears = 1)
     @wheels = 2
