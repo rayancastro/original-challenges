@@ -21,6 +21,6 @@ def winning_combination?
   first = DemoModule.introduce
   second = DemoModule::DemoClass.introduce
   third = DemoModule::DemoClass.new.introduce
-  # Next line should return true!
+  # Next line should return true
   [first, second, third] == [1, 2, 3]
 end
